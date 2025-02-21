@@ -1,65 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+	<head>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<style>
+			body {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+			}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+			.card {
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+				/* width: 80vw; */
+				max-width: 300px;
+				margin: auto;
+				text-align: center;
+				font-family: arial;
+				overflow-x: hidden;
+			}
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+			.title {
+				color: grey;
+				font-size: 18px;
+			}
 
-  <!-- Google Kumbh Sans Font -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+			.dateTime {
+				padding: 8px;
+				color: white;
+				background-color: #000;
+				text-align: center;
+				cursor: pointer;
+				width: 100%;
+				font-size: 12px;
+			}
 
-  <link rel="stylesheet" href="style.css">
+			.info {
+				display: block;
+				opacity: 70%;
+				font-style: italic;
+				margin: 0;
+				font-size: 14px;
+			}
 
-  <title>Frontend Mentor | Profile card component</title>
+			.bio {
+				padding: 0 10px;
+			}
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
+			a {
+				text-decoration: none;
+				font-size: 22px;
+				color: black;
+			}
 
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
-</head>
+			button:hover,
+			a:hover {
+				opacity: 0.7;
+			}
 
-<body>
-  <!-- <img class="top-bg-img" src="images\bg-pattern-top.svg">
-  <img class="bottom-bg-img" src="images\bg-pattern-bottom.svg"> -->
-  <div class="card">
-    <img src="images/bg-pattern-card.svg" class="card-bg" alt="">
-    <img src="images/image-victor.jpg" class="profile-img" alt="Victor's profile picture">
+			.social {
+				margin: 24px 0;
+			}
 
-    <div class="info">
-      <h1 class="blue name">Victor Crest <span class="gray age">26</span></h1>
-      <h2 class="gray city">London</h2>
-    </div>
+			.social a {
+				margin: 0 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="card">
+			<img
+				src="/Jesse Professional.jpg"
+				alt="Jesse"
+				style="width: 60%; object-fit: contain"
+			/>
+			<h1>Jesse Ogunlela</h1>
+			<p class="title">Software Engineer</p>
+			<p class="bio">
+				Hello! I'm Jesse, a software engineer with a passion for building
+				products that solve real-world problems.
+			</p>
+			<p class="info">📍 Ekiti State, Nigeria</p>
+			<p class="info">✉ jeslelacodes@gmail.com</p>
+			<div class="social">
+				<a href="https://www.x.com/jeslela" target="_blank"
+					><i class="fa fa-twitter"></i
+				></a>
+				<a href="https://www.instagram.com/cruise.99" target="_blank"
+					><i class="fa fa-instagram"></i
+				></a>
+				<a href="https://www.linkedin.com/in/jesse-o-4ba390a2" target="_blank"
+					><i class="fa fa-linkedin"></i
+				></a>
+				<a href="https://www.facebook.com/jesse.ogunlela" target="_blank"
+					><i class="fa fa-facebook"></i
+				></a>
+			</div>
+			<p id="utc-time" class="dateTime"></p>
+		</div>
 
-    <hr>
-
-    <div class="stats">
-      <div class="gray followers">
-        <strong class="blue">80K</strong><br>Followers
-      </div>
-      <div class="gray likes">
-        <strong class="blue">803K</strong><br>Likes
-      </div>
-      <div class="gray photos">
-        <strong class="blue">1.4K</strong><br>Photos
-      </div>
-    </div>
-  </div>
-
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://github.com/vinshield">Beaudecca</a>.
-  </div>
-</body>
-
+		<script>
+			function updateTime() {
+				document.getElementById("utc-time").innerText = `UTC Time: ${
+					new Date().toISOString().split(".")[0]
+				}Z`;
+			}
+			updateTime();
+		</script>
+	</body>
 </html>
