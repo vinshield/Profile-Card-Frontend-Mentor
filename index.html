@@ -74,19 +74,20 @@
 	<body>
 		<div class="card">
 			<img
+				data-testid="profilePicture"
 				src="images/Jesse.jpg"
 				alt="Jesse"
 				style="width: 60%; object-fit: contain"
 			/>
-			<h1>Jesse Ogunlela</h1>
-			<p class="title">Software Engineer</p>
-			<p class="bio">
+			<h1 data-testid="fullName">Jesse Ogunlela</h1>
+			<p data-testid="jobTitle" class="title">Software Engineer</p>
+			<p data-testid="shortBio" class="bio">
 				Hello! I'm Jesse, a software engineer with a passion for building
 				products that solve real-world problems.
 			</p>
-			<p class="info">📍 Ekiti State, Nigeria</p>
-			<p class="info">✉ jeslelacodes@gmail.com</p>
-			<div class="social">
+			<p data-testid="currentLocation" class="info">📍 Ekiti State, Nigeria</p>
+			<p data-testid="emailAddress" class="info">✉ jeslelacodes@gmail.com</p>
+			<div data-testid="socialLinks" class="social">
 				<a href="https://www.x.com/jeslela" target="_blank"
 					><i class="fa fa-twitter"></i
 				></a>
@@ -100,7 +101,7 @@
 					><i class="fa fa-facebook"></i
 				></a>
 			</div>
-			<p id="utc-time" class="dateTime"></p>
+			<p id="utc-time" data-testid="currentTimeUTC" class="dateTime"></p>
 		</div>
 
 		<script>
